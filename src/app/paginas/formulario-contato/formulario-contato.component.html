@@ -15,6 +15,16 @@
       </section>
    </header>
    <form [formGroup]="contatoForm" (ngSubmit)="salvarContato()">
+      <div role="button" class="imagem-contato">
+         <i class="material-icons">add</i>
+         <label for="avatar">Adicione a imagem do contato</label>
+         <input type="file" accept="image/*" id="avatar" required (change)="aoSelecionarArquivo($event)">
+      </div>
+      @if(contatoForm.get('avatar')?.value !== '') {
+         <figure>
+            <img [src]="contatoForm.get('avatar')?.value" alt="Avatar do contato">
+         </figure>
+      }
       <label for="nome">Nome</label>
       <input type="text" id="nome" placeholder="Digite o nome do contato" formControlName="nome"/>
       @if (contatoForm.get('nome')?.errors && contatoForm.get('nome')?.touched) {
