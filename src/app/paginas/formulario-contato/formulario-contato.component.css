@@ -164,12 +164,6 @@ header .cabecalho-link {
    background-color: #ADB5BD;
    cursor:not-allowed;
  }
- 
- .mensagem-erro {
-   font-size: 12px;
-   color: red;
-   margin-bottom: 12px;
- }
 
  .imagem-contato {
   width: 104px;
